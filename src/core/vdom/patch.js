@@ -131,6 +131,7 @@ export function createPatchFunction (backend) {
     ownerArray,
     index
   ) {
+    debugger
     if (isDef(vnode.elm) && isDef(ownerArray)) {
       // This vnode was used in a previous render!
       // now it's used as a new node, overwriting its elm would cause
@@ -698,6 +699,7 @@ export function createPatchFunction (backend) {
   }
 
   return function patch (oldVnode, vnode, hydrating, removeOnly) {
+    debugger
     if (isUndef(vnode)) {
       if (isDef(oldVnode)) invokeDestroyHook(oldVnode)
       return
@@ -757,7 +759,7 @@ export function createPatchFunction (backend) {
           oldElm._leaveCb ? null : parentElm,
           nodeOps.nextSibling(oldElm)
         )
-
+debugger
         // update parent placeholder node element, recursively
         if (isDef(vnode.parent)) {
           let ancestor = vnode.parent
