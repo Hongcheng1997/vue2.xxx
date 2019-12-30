@@ -10,9 +10,7 @@
 </head>
 
 <body>
-    <div id="app">
-        {{message}}
-    </div>
+    <div id="app"></div>
 </body>
 
 <script>
@@ -22,6 +20,13 @@
             return {
                 message: 'Render'
             }
+        },
+        render: function (createElement) {
+            return createElement('div', {
+                attrs: {
+                    id: 'app'
+                },
+            }, this.message)
         }
     })
 </script>
