@@ -189,10 +189,13 @@ export function createPatchFunction (backend) {
           insert(parentElm, vnode.elm, refElm)
         }
       } else {
+        // 创建子元素，递归调用 createElm
         createChildren(vnode, children, insertedVnodeQueue)
+        // 这个分支暂时跳过
         if (isDef(data)) {
           invokeCreateHooks(vnode, insertedVnodeQueue)
         }
+        // 插入到 body
         insert(parentElm, vnode.elm, refElm)
       }
 
