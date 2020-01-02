@@ -15,37 +15,28 @@
     </div>
 </body>
 <script>
-    let child = {
-        template: '<p>{{ child }}</p>',
-        data() {
-            return {
-                child: 'Child'
-            }
-        }
-    }
-
     let App = {
-        template: '<div><div>{{msg}}</div><child></child></div>',
+        template: '<div>{{msg}}</div>',
+        created() {
+            console.log('child created')
+        },
+        mounted() {
+            console.log('child mounted')
+        },
         data() {
             return {
                 msg: 'Hello Vue'
             }
-        },
-        components: {
-            child
         }
     }
 
-    // Vue.component('button-counter', {
-    //     data: function () {
-    //         return {
-    //             count: 0
-    //         }
-    //     },
-    //     template: '<button v-on:click="count++">You clicked me {{ count }} times.</button>'
-    // })
+    Vue.mixin({
+        created() {
+            console.log('parent created')
+        }
+    })
 
-    new Vue({
+    let app = new Vue({
         el: '#app',
         render: h => h(App)
     })
