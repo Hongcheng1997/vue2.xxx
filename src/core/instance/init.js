@@ -35,7 +35,6 @@ export function initMixin (Vue: Class<Component>) {
       // internal component options needs special treatment.
       initInternalComponent(vm, options)
     } else {
-      // debugger
       vm.$options = mergeOptions(
         resolveConstructorOptions(vm.constructor),
         options || {},
