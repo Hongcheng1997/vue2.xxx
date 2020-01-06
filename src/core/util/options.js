@@ -390,6 +390,7 @@ export function mergeOptions (
   child: Object,
   vm?: Component
 ): Object {
+// debugger
   if (process.env.NODE_ENV !== 'production') {
     checkComponents(child)
   }
