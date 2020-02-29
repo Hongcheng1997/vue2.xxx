@@ -50,6 +50,7 @@ export function initState (vm: Component) {
   const opts = vm.$options
   if (opts.props) initProps(vm, opts.props)
   if (opts.methods) initMethods(vm, opts.methods)
+  // debugger
   if (opts.data) {
     initData(vm)
   } else {
@@ -147,6 +148,7 @@ function initData (vm: Component) {
       proxy(vm, `_data`, key)
     }
   }
+  // debugger
   // observe data
   observe(data, true /* asRootData */)
 }
@@ -347,6 +349,7 @@ export function stateMixin (Vue: Class<Component>) {
     cb: any,
     options?: Object
   ): Function {
+    // debugger
     const vm: Component = this
     if (isPlainObject(cb)) {
       return createWatcher(vm, expOrFn, cb, options)

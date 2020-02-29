@@ -12,7 +12,6 @@
 <body>
     <div id="app">
         {{message}}
-        {{text}}
         <button @click="message++">change</button>
     </div>
 </body>
@@ -24,13 +23,12 @@
                 message: 1
             }
         },
-        computed: {
-            text() {
-                return this.message + 1
+        watch: {
+            message(newValue) {
+                console.log(newValue)
             }
         }
     })
-    console.log(app)
 </script>
 
 </html>
