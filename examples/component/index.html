@@ -25,17 +25,22 @@
     }
 
     let App = {
-        template: '<div><div>{{msg}}</div></div>',
+        template: '<div @click="handle">{{num}}</div>',
         data() {
             return {
-                msg: 'Hello Vue'
+                num: 1
             }
         },
+        methods: {
+            handle() {
+                this.num += 1
+            }
+        }
         // components: {
         //     child
         // }
     }
-
+    debugger
     // Vue.component('button-counter', {
     //     data: function () {
     //         return {
@@ -47,7 +52,10 @@
 
     new Vue({
         el: '#app',
-        render: h => h(App)
+        components: {
+            App
+        }
+        // render: h => h(App)
     })
 
     // console.log(Vue.options)

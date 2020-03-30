@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>diff</title>
+    <script src="../../dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="val">1</div>
+        <div v-if="!val">2</div>
+        <button @click="val = !val">change</button>
+    </div>
+</body>
+
+<script>
+    debugger
+    new Vue({
+        el: '#app',
+        data() {
+            return {
+                val: true
+            }
+        }
+    })
+</script>
+
+</html>

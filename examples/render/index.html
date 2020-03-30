@@ -11,11 +11,21 @@
 
 <body>
     <div id="app">
-        {{this.message}}
+        {{message}}
+        <child></child>
     </div>
 </body>
 
 <script>
+    debugger
+    let child = {
+        template: '<p>{{ child }}</p>',
+        data() {
+            return {
+                child: 'Child'
+            }
+        }
+    }
     new Vue({
         el: '#app',
         data() {
@@ -23,12 +33,24 @@
                 message: 'Render'
             }
         },
+        components: {
+            child
+        }
         // render: function (createElement) {
         //     return createElement('div', {
         //         attrs: {
         //             id: 'app'
         //         },
         //     }, this.message)
+        // }
+        // render: function (createElement) {
+        //     return createElement('div',
+        //         {
+        //             attrs: { "id": "app" }
+        //         }, [this.message,
+        //         createElement('p', [createElement('span', [this.message])]
+        //         )
+        //     ])
         // }
     })
 </script>
