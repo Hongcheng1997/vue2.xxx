@@ -15,15 +15,43 @@
         <div v-if="!val">2</div>
         <button @click="val = !val">change</button>
     </div>
+    <div id="app1">
+        <div>
+            <ul>
+                <li v-for="item in items" :key="item.id">{{ item.val }}</li>
+            </ul>
+        </div>
+        <button @click="change">change</button>
+    </div>
 </body>
 
 <script>
-    debugger
+    // new Vue({
+    //     el: '#app',
+    //     data() {
+    //         return {
+    //             val: true
+    //         }
+    //     }
+    // })
     new Vue({
-        el: '#app',
+        el: '#app1',
         data() {
             return {
-                val: true
+                items: [
+                    { id: 0, val: 'A' },
+                    { id: 1, val: 'B' },
+                    { id: 2, val: 'C' },
+                    { id: 3, val: 'D' }
+                ]
+            }
+        },
+        methods: {
+            change() {
+                // this.items.shift()
+                // this.items.pop()
+                // this.items.reverse().push({ id: 4, val: 'E' })
+                this.items = [{ id: 4, val: 'E' }]
             }
         }
     })

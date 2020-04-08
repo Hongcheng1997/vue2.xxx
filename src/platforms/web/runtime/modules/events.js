@@ -103,6 +103,7 @@ function remove (
 }
 
 function updateDOMListeners (oldVnode: VNodeWithData, vnode: VNodeWithData) {
+  // debugger
   if (isUndef(oldVnode.data.on) && isUndef(vnode.data.on)) {
     return
   }

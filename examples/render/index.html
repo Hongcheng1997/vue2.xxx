@@ -11,30 +11,26 @@
 
 <body>
     <div id="app">
-        {{message}}
-        <child></child>
+        <p @click="console.log(1)">{{message}}</p>
     </div>
 </body>
 
 <script>
-    debugger
-    let child = {
-        template: '<p>{{ child }}</p>',
-        data() {
-            return {
-                child: 'Child'
-            }
-        }
-    }
+    // let child = {
+    //     template: '<p>{{ child }}</p>',
+    //     data() {
+    //         return {
+    //             child: 'Child'
+    //         }
+    //     }
+    // }
+
     new Vue({
         el: '#app',
         data() {
             return {
                 message: 'Render'
             }
-        },
-        components: {
-            child
         }
         // render: function (createElement) {
         //     return createElement('div', {
